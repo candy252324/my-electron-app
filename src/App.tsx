@@ -1,10 +1,8 @@
-import './App.css'
-
 function App() {
   return (
     <>
-     <div className='app'>
-      <div>
+     <div className='bg-#fff'>
+        <div>
           node 版本：{window.versions.node()}
         </div>
         <div>
