@@ -10,7 +10,7 @@ const createWindow = () => {
       nodeIntegration:true
     }
   })
-  const webUrl=isDev?'http://localhost:3000':"https://www.baidu.com/"
+  const webUrl=isDev?'http://localhost:5173':"https://www.baidu.com/"
   win.loadURL(webUrl)
   isDev && win.webContents.openDevTools() 
 }
