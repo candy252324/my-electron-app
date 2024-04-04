@@ -2,7 +2,7 @@
   "name": "my-electron-app",
   "private": true,
   "version": "0.0.0",
-  "main": "main.js",
+  "main": "electron/main.js",
   "scripts": {
     "dev": "concurrently \"cross-env BROWSER=none npm run start-react\" \"wait-on http://localhost:5173 && npm run start-ele\" ",
     "start-ele": "nodemon --watch main.js --exec \"electron .\"",
