@@ -1,12 +1,18 @@
 const { app, BrowserWindow } = require('electron')
+// const isDev=require('electron-is-dev')
+const isDev=true  // cjh todo 环境判断
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600
+    width: 1200,
+    height: 900,
+    webPreferences:{
+      nodeIntegration:true
+    }
   })
-
-  win.loadFile('index.html')
+  const webUrl=isDev?'http://localhost:3000':"https://www.baidu.com/"
+  win.loadURL(webUrl)
+  isDev && win.webContents.openDevTools() 
 }
 
 app.whenReady().then(() => {
