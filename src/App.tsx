@@ -1,15 +1,21 @@
+import TheWin from "./components/TheWin"
+
 function App() {
   return (
     <>
      <div className='bg-#fff'>
         <div>
-          node 版本：{window.versions.node()}
+          node 版本：{ELECTRON_API.nodeVersion}
         </div>
         <div>
-          chrome 版本：{window.versions.chrome()}
+          chrome 版本：{ELECTRON_API.chromeVersion}
         </div>
         <div>
-          electron 版本：{window.versions.electron()}
+          electron 版本：{ELECTRON_API.electronVersion}
+        </div>
+
+        <div>
+          <TheWin/>
         </div>
      </div>
     </>

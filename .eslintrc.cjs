@@ -9,6 +9,9 @@ module.exports = {
   ignorePatterns: ['dist', '.eslintrc.cjs','global.d.ts'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
+  globals:{ 
+    ELECTRON_API:'readonly',
+   },
   rules: {
     'react-refresh/only-export-components': [
       'warn',

@@ -9,9 +9,12 @@ const createWindow = () => {
     width: 1200,
     height: 900,
     webPreferences: {
+      nodeIntegration:false,  // 安全考虑，禁止开启
       preload: path.join(__dirname, 'preload.cjs')
     }
   })
+  require('./ipcMain/index.cjs')
+  
   const webUrl=isDev?'http://localhost:5173':"https://www.baidu.com/"
   win.loadURL(webUrl)
   isDev && win.webContents.openDevTools() 
