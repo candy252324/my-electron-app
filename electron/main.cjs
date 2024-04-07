@@ -1,23 +1,22 @@
 const path=require('path')
 const { app, BrowserWindow } = require('electron')
 
-// const isDev=require('electron-is-dev')
-const isDev=true  // cjh todo 环境判断
+const isProd=app.isPackaged  // 是否已打包
 
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 1200,
     height: 900,
     webPreferences: {
-      nodeIntegration:false,  // 安全考虑，禁止开启
+      nodeIntegration:false,  // 安全考虑，不开启
       preload: path.join(__dirname, 'preload.cjs')
     }
   })
   require('./ipcMain/index.cjs')
   
-  const webUrl=isDev?'http://localhost:5173':"https://www.baidu.com/"
+  const webUrl=isProd?`file://${path.join(__dirname,'../dist/index.html')}`:'http://localhost:5173'
   win.loadURL(webUrl)
-  isDev && win.webContents.openDevTools() 
+  !isProd && win.webContents.openDevTools() 
 }
 
 app.whenReady().then(() => {

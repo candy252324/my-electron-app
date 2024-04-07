@@ -1,15 +1,15 @@
 import { Button } from 'antd';
 
 export default function TheWin(){
-    function openTheWin(){
-        ELECTRON_API.openWin({
-            url:'http://baidu.com',
-            config:{
-                width: 600,
-                height: 400,
-            },
-        })
-    }
+    // function openTheWin(){
+    //     ELECTRON_API.openWin({
+    //         url:'http://baidu.com',
+    //         config:{
+    //             width: 600,
+    //             height: 400,
+    //         },
+    //     })
+    // }
     return (
         <>
             {/* https://www.electronjs.org/zh/docs/latest/tutorial/ipc */}

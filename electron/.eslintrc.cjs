@@ -7,7 +7,7 @@ module.exports = {
     ],
     rules: {
         "node/no-unpublished-require": ['warn', {
-            "allowModules": ["electron"]
+            "allowModules": ["electron","electron-builder"]
         }]
     }
   }

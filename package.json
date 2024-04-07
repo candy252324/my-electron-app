@@ -1,14 +1,17 @@
 {
   "name": "my-electron-app",
+  "author":"cxx",
   "private": true,
   "version": "0.0.0",
   "main": "electron/main.cjs",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"cross-env BROWSER=none npm run start-react\" \"wait-on http://localhost:5173 && npm run start-ele\" ",
-    "start-ele": "nodemon --exec \"electron .\"",
-    "start-react": "vite",
-    "build": "tsc && vite build",
+    "dev": "concurrently \"cross-env BROWSER=none npm run dev-react\" \"wait-on http://localhost:5173 && npm run dev-ele\" ",
+    "dev-react": "vite",
+    "dev-ele": "nodemon --exec \"electron .\"",
+    "build": "npm run build-react && npm run build-ele",
+    "build-react": "tsc && vite build",
+    "build-ele":"electron-builder --config ./electron/build.config.cjs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -26,6 +29,7 @@
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "electron": "^29.2.0",
+    "electron-builder": "^24.13.3",
     "eslint": "^8.57.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -38,5 +42,5 @@
   },
   "engines": {
     "node": ">=16.0.0"
-}
+  }
 }
