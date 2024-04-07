@@ -7,10 +7,13 @@ electron + vite + react + ts
 # 项目启动
 
 安装依赖：
+
 ```shell
 npm i
 ```
+
 项目运行：
+
 ```shell
 npm run dev
 ```

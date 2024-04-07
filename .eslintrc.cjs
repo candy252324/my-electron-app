@@ -5,17 +5,16 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
+    'prettier',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs','global.d.ts'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'global.d.ts'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
-  globals:{ 
-    ELECTRON_API:'readonly',
-   },
+  globals: {
+    ELECTRON_API: 'readonly',
+  },
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
   },
 }
