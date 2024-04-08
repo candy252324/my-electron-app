@@ -6,6 +6,13 @@ module.exports = {
   directories: {
     output: 'release/${version}', // 打包输出目录
   },
+  publish: {
+    provider: 'github',
+    owner: 'candy252324',
+    repo: 'my-electron-app',
+    token: 'xxx',
+    releaseType: 'draft',
+  },
   mac: {
     target: ['dmg'],
     artifactName: '${productName}-Mac-${version}-Installer.${ext}',
