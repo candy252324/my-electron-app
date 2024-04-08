@@ -41,11 +41,15 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "husky": "^8.0.3",
+    "lint-staged": "^15.2.2",
     "nodemon": "^3.1.0",
     "typescript": "^5.2.2",
     "unocss": "^0.59.0-beta.1",
     "vite": "^5.2.0",
     "wait-on": "^7.2.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,cjs,tsx}": ["eslint --fix","prettier --write"]
   },
   "engines": {
     "node": ">=16.0.0"
