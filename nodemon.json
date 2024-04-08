@@ -1,6 +1,4 @@
 {
-  "watch":"./electron/",
-  "ignore": [
-      "./electron/.eslintrc.cjs"
-    ]
+  "watch": "./electron/",
+  "ignore": ["./electron/.eslintrc.cjs"]
 }
