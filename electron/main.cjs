@@ -1,7 +1,9 @@
 const path = require('path')
 const { app, BrowserWindow } = require('electron')
+const { getAppVersion } = require('./utils/index.cjs')
 
 const isProd = app.isPackaged // 是否已打包
+process.env.appVersion = getAppVersion()
 
 const createWindow = () => {
   const win = new BrowserWindow({

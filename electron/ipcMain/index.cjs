@@ -15,3 +15,8 @@ ipcMain.on('open-win', (event, { url, config }) => {
   let win = new BrowserWindow(Object.assign({}, config))
   win.loadURL(url)
 })
+
+async function checkUpdate() {
+  return '已经是最新版本'
+}
+ipcMain.handle('check-update', checkUpdate)
